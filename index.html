@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- QR Code Styling Library -->
+  <script src="https://unpkg.com/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>QR Code Generator</h1>
+
+  <div class="controls">
+    <label>Isi QR (Teks / URL / WhatsApp)</label>
+    <input type="text" id="qrData" placeholder="https://example.com atau 628xxxx">
+
+    <div class="row">
+      <div>
+        <label>Ukuran QR</label>
+        <input type="range" id="qrSize" min="200" max="600" value="300">
+      </div>
+      <div>
+        <label>Error Correction</label>
+        <select id="errorLevel">
+          <option value="L">L (Low)</option>
+          <option value="M" selected>M (Medium)</option>
+          <option value="Q">Q (Quartile)</option>
+          <option value="H">H (High)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Warna QR</label>
+        <input type="color" id="qrColor" value="#000000">
+      </div>
+      <div>
+        <label>Background</label>
+        <input type="color" id="bgColor" value="#ffffff">
+      </div>
+    </div>
+
+    <label>Logo Tengah (opsional)</label>
+    <input type="file" id="logoInput" accept="image/*">
+
+    <label>Ukuran Logo (%)</label>
+    <input type="range" id="logoSize" min="10" max="30" value="20">
+
+    <div class="buttons">
+      <button id="downloadPNG">Download PNG</button>
+      <button id="downloadSVG">Download SVG</button>
+    </div>
+  </div>
+
+  <div class="preview">
+    <div id="qrCode"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
